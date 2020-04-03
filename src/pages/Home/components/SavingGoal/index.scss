@@ -1,0 +1,123 @@
+.saving-goal {
+  max-width: 560px;
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #E1E8ED;
+  box-shadow: 0px 1px 4px rgba(150, 164, 176, 0.1);
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 39px 39px 49px 40px;
+
+  @media screen and (max-width: 500px) {
+    max-width: 100%;
+    border-radius: 8px 8px 0 0px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    color: #1C1E1F;
+    margin-top: 7px;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 20px;
+    color: #657786;
+    margin-top: 2px;
+  }
+
+  &__form {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+    }
+  }
+
+  &__resume {
+    margin-top: 31px;
+    background-color: #FFFFFF;
+    border: 1px solid #E1E8ED;
+    box-shadow: 0px 1px 4px rgba(150, 164, 176, 0.1);
+    border-radius: 4px;
+  }
+
+  &__info {
+    font-size: 12px;
+    line-height: 16px;
+    color: #1C1E1F;
+
+    > span {
+      font-weight: 600;
+    }
+  }
+
+  &__disclaimer {
+    background-color: #F4F8FA;
+    padding: 16px 32px 18px;
+  }
+
+  &__button {
+    display: flex;
+    background-color: #1B31A8;
+    border-radius: 32px;
+    color: #fff;
+    padding: 16px 165px;
+    margin: 31px auto 0
+  }
+
+  .form {
+    &__group {
+      display: flex;
+      flex-direction: column;
+
+      &:first-child {
+        margin-bottom: 16px;
+      }
+    }
+
+    &__label {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: #1C1E1F;
+    }
+
+    &__input {
+      height: 56px;
+      border: 1px solid #E1E8ED;
+      margin-top: 4px;
+    }
+  }
+
+  .resume {
+    &__amount {
+      min-height: 102px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__text {
+      padding-left: 32px;
+      font-family: Work Sans;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      color: #1C1E1F;
+
+    }
+
+    &__value {
+      padding-right: 32px;
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 32px;
+      color: #0079FF;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.home {
+  width: 100%;
+  min-height: 100%;
+  background-color: #F2F2F2;
+
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px 107px;
+
+    @media screen and (max-width: 500px) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    color: #1B31A8;
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    padding-top: 54px;
+    padding-bottom: 40px;
+
+    @media screen and (max-width: 500px) {
+      padding-top: 23px;
+      padding-bottom: 24px;
+    }
+
+    > span {
+      font-weight: 600;
+    }
+  }
+}
