@@ -1,10 +1,11 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Academy from '../../../../icons/home.svg'
+import logic from './logic'
 
 import './index.scss';
 
-const SavingGoal: React.FC = () => {
-  const amount = '521';
+const SavingGoal = () => {
+  const { monthDiffy, yearGoal, monthGoal, mounthlyAmount, goalAmount, goalAmountChange, nextMonth, prevMonth } = logic()
 
   return (
     <div className="saving-goal">
@@ -16,17 +17,25 @@ const SavingGoal: React.FC = () => {
         Saving goal
       </p>
       <div className="saving-goal__form form">
-        <div className="form__group">
+        <div className="form__container">
           <label htmlFor="" className="form__label">
             Total amount
           </label>
-          <input type="number" className="form__input"/>
+          <input type="tel" className="form__input" value={goalAmount} onChange={goalAmountChange}/>
         </div>
-        <div className="form__group">
+        <div className="form__container">
           <label htmlFor="" className="form__label">
             Reach goal by
           </label>
-          <input type="text" className="form__input"/>
+          <div className="form__group">
+            <div className="form__icon form__icon--arrow" onClick={prevMonth} />
+            <div className="form__date">
+              <span>{monthGoal}</span>
+              <span>{yearGoal}</span>
+            </div>
+            <div className="form__icon form__icon--right" onClick={nextMonth} />
+            {/* <input type="month" className="form__input" /> */}
+          </div>
         </div>
       </div>
       <div className="saving-goal__resume resume">
@@ -35,12 +44,12 @@ const SavingGoal: React.FC = () => {
             Monthly amount
           </p>
           <p className="resume__value">
-            ${amount}
+            ${mounthlyAmount}
           </p>
         </div>
         <div className="saving-goal__disclaimer">
           <p className="saving-goal__info">
-            You’re planning <span>48 monthly deposits</span> to reach your <span>$25,000</span> goal by <span>October 2020.</span>
+            You’re planning <span>{monthDiffy} monthly deposits</span> to reach your <span>${goalAmount}</span> goal by <span>{monthGoal} {yearGoal}.</span>
           </p>
         </div>
       </div>
