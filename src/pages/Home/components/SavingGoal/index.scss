@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: 39px 39px 49px 40px;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     max-width: 100%;
     border-radius: 8px 8px 0 0px;
   }
@@ -33,7 +33,7 @@
     margin-top: 40px;
     justify-content: space-between;
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 600px) {
       flex-direction: column;
     }
   }
@@ -74,9 +74,15 @@
     &__container {
       display: flex;
       flex-direction: column;
+      max-width: 232px;
+      width: 100%;
 
       &:first-child {
-        margin-bottom: 16px;
+        margin-right: 17px;
+
+        @media screen and (max-width: 600px) {
+          margin-bottom: 16px;
+        }
       }
     }
 
@@ -90,34 +96,56 @@
     &__input {
       height: 56px;
       border: 1px solid #E1E8ED;
-      margin-top: 4px;
+      color: #1C1E1F;
+      font-weight: 600;
+      padding-left: 16px;
+      max-width: 177px;
     }
 
     &__group {
       display: flex;
       margin-top: 4px;
+      min-height: 56px;
     }
 
     &__date {
       width: 100%;
       border: 1px solid #E1E8ED;
       padding: 7px 0;
-      min-width: 136px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      color: #1C1E1F;
+    }
+
+    &__date-month {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &__date-year {
+      font-size: 16px;
+      line-height: 20px;
     }
 
     &__icon {
-      width: 48px;
+      min-width: 48px;
       background-color: #E1E8ED;
       position: relative;
       border-radius: 4px 0px 0px 4px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &--right {
         border-radius: 0px 4px 4px 0px;
+
+        > img {
+          transform: rotate(180deg);
+        }
       }
 
       &--arrow {

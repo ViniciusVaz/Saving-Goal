@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import Academy from '../../../../icons/home.svg'
+import Home from '../../../../icons/home.svg'
+import Money from '../../../../icons/money.svg'
+import Arrow from '../../../../icons/arrow.svg'
 import logic from './logic'
 
 import './index.scss';
@@ -9,7 +11,7 @@ const SavingGoal = () => {
 
   return (
     <div className="saving-goal">
-      <img src={Academy} alt="" className="saving-goal__image"/>
+      <img src={Home} alt="" className="saving-goal__image"/>
       <h2 className="saving-goal__title">
         Buy a house
       </h2>
@@ -21,19 +23,28 @@ const SavingGoal = () => {
           <label htmlFor="" className="form__label">
             Total amount
           </label>
-          <input type="tel" className="form__input" value={goalAmount} onChange={goalAmountChange}/>
+          <div className="form__group">
+            <div className="form__icon">
+              <img src={Money} alt=""/>
+            </div>
+            <input type="tel" className="form__input" value={goalAmount} onChange={goalAmountChange}/>
+          </div>
         </div>
         <div className="form__container">
           <label htmlFor="" className="form__label">
             Reach goal by
           </label>
           <div className="form__group">
-            <div className="form__icon form__icon--arrow" onClick={prevMonth} />
-            <div className="form__date">
-              <span>{monthGoal}</span>
-              <span>{yearGoal}</span>
+            <div className="form__icon" onClick={prevMonth}>
+              <img src={Arrow} alt=""/>
             </div>
-            <div className="form__icon form__icon--right" onClick={nextMonth} />
+            <div className="form__date">
+              <span className="form__date-month">{monthGoal}</span>
+              <span className="form__date-year">{yearGoal}</span>
+            </div>
+            <div className="form__icon form__icon--right" onClick={nextMonth}>
+              <img src={Arrow} alt=""/>
+            </div>
             {/* <input type="month" className="form__input" /> */}
           </div>
         </div>
