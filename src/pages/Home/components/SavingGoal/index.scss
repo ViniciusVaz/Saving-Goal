@@ -67,7 +67,15 @@
     border-radius: 32px;
     color: #fff;
     padding: 16px 165px;
-    margin: 31px auto 0
+    margin: 31px auto 0;
+    transition: all ease .4s;
+
+    &:hover {
+      border: 1px solid #1B31A8;
+      background-color: #fff;
+      color: #1B31A8;
+      font-weight: 600;
+    }
   }
 
   .form {
@@ -139,6 +147,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      &--disabled {
+        cursor: no-drop;
+      }
 
       &--right {
         border-radius: 0px 4px 4px 0px;

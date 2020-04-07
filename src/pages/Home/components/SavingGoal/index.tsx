@@ -7,7 +7,7 @@ import logic from './logic'
 import './index.scss';
 
 const SavingGoal = () => {
-  const { monthDiffy, yearGoal, monthGoal, mounthlyAmount, goalAmount, goalAmountChange, nextMonth, prevMonth } = logic()
+  const { monthDiffy, yearGoal, monthGoal, mounthlyAmount, goalAmount, goalAmountChange, nextMonth, prevMonth, errorMessage } = logic()
 
   return (
     <div className="saving-goal">
@@ -35,7 +35,7 @@ const SavingGoal = () => {
             Reach goal by
           </label>
           <div className="form__group">
-            <div className="form__icon" onClick={prevMonth}>
+            <div className={`form__icon ${errorMessage ? 'form__icon--disabled' : '' }`} onClick={prevMonth}>
               <img src={Arrow} alt=""/>
             </div>
             <div className="form__date">

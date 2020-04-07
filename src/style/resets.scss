@@ -25,7 +25,11 @@ time, mark, audio, video {
 }
 
 /* make sure to set some focus styles for accessibility */
-:focus {
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
 	outline: 0;
 }
 

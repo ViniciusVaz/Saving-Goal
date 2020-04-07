@@ -50,7 +50,7 @@ export const getMonthDiffy = (d1, d2) => {
   let date2 = new Date(d2);
 
   let years =  date2.getFullYear() - date1.getFullYear();
-  let months =(years * 12) + (date2.getMonth() - date1.getMonth()) ;
+  let months = (years * 12) + (date2.getMonth() - date1.getMonth()) ;
 
   return months;
 }
