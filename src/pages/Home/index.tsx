@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Header from '../../components/Header/index.tsx';
-import SavingGoal from './components/SavingGoal'
+import SavingGoal from './components/SavingGoal';
 
 import './index.scss';
 
@@ -17,7 +17,7 @@ const HomePage: React.FunctionComponent = () => {
         </div>
       </div>
     </React.Fragment>
-  )
+  );
 };
 
 export default HomePage;

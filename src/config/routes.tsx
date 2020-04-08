@@ -1,12 +1,12 @@
-import Home from '../pages/Home'
+import Home from '../pages/Home';
 
 const routes = [
   {
     exact: true,
-    path: "/",
+    path: '/',
     component: Home,
-    key: "home"
+    key: 'home'
   }
-]
+];
 
-export default routes
+export default routes;
