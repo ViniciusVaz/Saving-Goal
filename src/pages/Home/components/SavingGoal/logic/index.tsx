@@ -61,10 +61,21 @@ export default () => {
     setErrorMessage(false)
   }
 
+  const watchKeyPress = e => {
+    if(e.keyCode === 37) {
+      prevMonth()
+    } else if(e.keyCode === 39) {
+      nextMonth()
+    }
+  }
+
   useEffect(() => {
     currentDate.setMonth(currentDate.getMonth() + 48)
     setDate(currentDate)
     calcPayment(goalAmount)
+    document.addEventListener('keydown', watchKeyPress, false);
+
+    return () => document.removeEventListener("keydown", watchKeyPress, false);
   }, [])
 
   return {
