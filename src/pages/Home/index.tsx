@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Header from '../../components/Header/index.tsx';
+import Header from '../../components/Header';
 import SavingGoal from './components/SavingGoal';
 
 import './index.scss';

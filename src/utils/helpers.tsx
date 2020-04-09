@@ -13,7 +13,7 @@ export const mapMonth = [
   'December',
 ]
 
-export const currencyToFloat = val =>
+export const currencyToFloat = (val: any) =>
 	parseFloat(
 		val
 			.replace('R$ ', '')
@@ -21,9 +21,9 @@ export const currencyToFloat = val =>
 			.replace(',', '.')
 	)
 
-export const getMoneyMask = (value = '', prefix = '', decimals = 2) => {
+export const getMoneyMask = (value: any, prefix = '', decimals = 2) => {
   if (value === '') return value
-	if (typeof value === 'number') value = value.toFixed(decimals) + ''
+	// if (typeof value === 'number') value = value.toFixed(decimals) + ''
 	value = value.replace(/\D/g, '')
 	let int = parseInt(value.replace(/\D/g, ''), 10)
 	if (isNaN(int)) return ''
@@ -45,7 +45,7 @@ export const getMoneyMask = (value = '', prefix = '', decimals = 2) => {
 	return value.length === 0 ? '' : `${prefix}${value}`
 }
 
-export const getMonthDiffy = (d1, d2) => {
+export const getMonthDiffy = (d1: any, d2: any) => {
   let date1 = new Date(d1);
   let date2 = new Date(d2);
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import Home from '../../../../icons/home.svg';
 import Money from '../../../../icons/money.svg';
 import Arrow from '../../../../icons/arrow.svg';
@@ -47,7 +47,8 @@ const SavingGoal = () => {
           </label>
           <div className="form__group">
             <div
-              className={`form__icon ${
+              className={`form__icon
+                form__icon--left ${
                 errorMessage ? 'form__icon--disabled' : ''
               }`}
               onClick={prevMonth}
@@ -61,7 +62,6 @@ const SavingGoal = () => {
             <div className="form__icon form__icon--right" onClick={nextMonth}>
               <img src={Arrow} alt="" />
             </div>
-            {/* <input type="month" className="form__input" /> */}
           </div>
         </div>
       </div>
@@ -73,8 +73,8 @@ const SavingGoal = () => {
         <div className="saving-goal__disclaimer">
           <p className="saving-goal__info">
             You’re planning <span>{monthDiffy} monthly deposits</span> to reach
-            your <span>${goalAmount}</span> goal by
-            <span>
+            your <span>${goalAmount}</span> goal
+            by <span>
               {monthGoal} {yearGoal}.
             </span>
           </p>

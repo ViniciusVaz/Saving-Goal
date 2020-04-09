@@ -12,15 +12,15 @@ export default () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [monthGoal, setMonthGoal] = useState('');
   const [yearGoal, setYearGoal] = useState('');
-  const [monthDiffy, setMonthyDiff] = useState('');
+  const [monthDiffy, setMonthyDiff] = useState(0);
   const [errorMessage, setErrorMessage] = useState(false);
 
-  const setDate = dt => {
+  const setDate = (dt: any) => {
     setMonthGoal(mapMonth[dt.getMonth()]);
     setYearGoal(dt.getFullYear());
   };
 
-  const calcPayment = value => {
+  const calcPayment = (value: any) => {
     const dateNow = new Date();
     const goalAmountNumber = value.replace(/,/gm, '');
 
@@ -31,7 +31,7 @@ export default () => {
     setMounthlyAmount(getMoneyMask(calcMonth));
   };
 
-  const goalAmountChange = el => {
+  const goalAmountChange = (el: any) => {
     const currentValue = el.target.value;
     const goalAmount = getMoneyMask(currentValue);
     setGoalAmount(`${goalAmount}`);
@@ -65,7 +65,7 @@ export default () => {
     setErrorMessage(false);
   };
 
-  const watchKeyPress = e => {
+  const watchKeyPress = (e: any) => {
     if (e.keyCode === 37) {
       prevMonth();
     } else if (e.keyCode === 39) {
