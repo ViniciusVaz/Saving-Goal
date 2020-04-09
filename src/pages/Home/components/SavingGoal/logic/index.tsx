@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   getMoneyMask,
   getMonthDiffy,
@@ -14,6 +14,8 @@ export default () => {
   const [yearGoal, setYearGoal] = useState('');
   const [monthDiffy, setMonthyDiff] = useState(0);
   const [errorMessage, setErrorMessage] = useState(false);
+
+  const goalAmountRef = useRef({});
 
   const setDate = (dt: any) => {
     setMonthGoal(mapMonth[dt.getMonth()]);
@@ -34,7 +36,9 @@ export default () => {
   const goalAmountChange = (el: any) => {
     const currentValue = el.target.value;
     const goalAmount = getMoneyMask(currentValue);
-    setGoalAmount(`${goalAmount}`);
+    goalAmountRef.current = goalAmount
+
+    setGoalAmount(goalAmount);
     calcPayment(goalAmount);
   };
 
@@ -48,24 +52,25 @@ export default () => {
       if (monthDiffy === 2) {
         currentDate.setMonth(currentDate.getMonth() - 1);
         setDate(currentDate);
-        calcPayment(goalAmount);
+        calcPayment(goalAmountRef.current);
       }
     } else {
       currentDate.setMonth(currentDate.getMonth() - 1);
       setErrorMessage(false);
       setDate(currentDate);
-      calcPayment(goalAmount);
+      calcPayment(goalAmountRef.current);
     }
   };
 
   const nextMonth = () => {
     currentDate.setMonth(currentDate.getMonth() + 1);
     setDate(currentDate);
-    calcPayment(goalAmount);
+    calcPayment(goalAmountRef.current);
     setErrorMessage(false);
   };
 
   const watchKeyPress = (e: any) => {
+    e.stopPropagation();
     if (e.keyCode === 37) {
       prevMonth();
     } else if (e.keyCode === 39) {
@@ -77,10 +82,15 @@ export default () => {
     currentDate.setMonth(currentDate.getMonth() + 48);
     setDate(currentDate);
     calcPayment(goalAmount);
-    document.addEventListener('keydown', watchKeyPress, false);
+    goalAmountRef.current = goalAmount
+    document.addEventListener('keydown', watchKeyPress);
 
     return () => document.removeEventListener('keydown', watchKeyPress, false);
   }, []);
+
+  useEffect(() => {
+
+  })
 
   return {
     nextMonth,
