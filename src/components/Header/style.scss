@@ -1,6 +1,10 @@
 .header {
   height: 79px;
 
+  @media screen and (max-width: 600px) {
+    height: 56px;
+  }
+
   &__container {
     max-width: 1280px;
     height: 100%;
@@ -12,5 +16,9 @@
 
   &__logo {
     width: 95px;
+
+    @media screen and (max-width: 600px) {
+      width: 65px;
+    }
   }
 }

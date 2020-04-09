@@ -68,6 +68,7 @@ const SavingGoal = () => {
       <div className="saving-goal__resume resume">
         <div className="resume__amount">
           <p className="resume__text">Monthly amount</p>
+          <p className="resume__text resume__text--mobile">Monthly</p>
           <p className="resume__value">${mounthlyAmount}</p>
         </div>
         <div className="saving-goal__disclaimer">

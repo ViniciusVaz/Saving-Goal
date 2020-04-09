@@ -11,6 +11,7 @@
   @media screen and (max-width: 600px) {
     max-width: 100%;
     border-radius: 8px 8px 0 0px;
+    padding: 28px 24px 50px;
   }
 
   &__image {
@@ -23,7 +24,12 @@
     font-size: 32px;
     line-height: 40px;
     color: #1C1E1F;
-    margin-top: 7px;
+    margin-top: 4px;
+
+    @media screen and (max-width: 600px) {
+      font-size: 24px;
+      line-height: 32px;
+    }
   }
 
   &__subtitle {
@@ -31,6 +37,11 @@
     line-height: 20px;
     color: #657786;
     margin-top: 2px;
+
+    @media screen and (max-width: 600px) {
+      font-size: 14px;
+      margin-top: 0;
+    }
   }
 
   &__form {
@@ -40,6 +51,7 @@
 
     @media screen and (max-width: 600px) {
       flex-direction: column;
+      margin-top: 36px;
     }
   }
 
@@ -64,6 +76,11 @@
   &__disclaimer {
     background-color: #F4F8FA;
     padding: 16px 32px 18px;
+
+    @media screen and (max-width: 600px) {
+      padding: 16px 24px 22px;
+    }
+
   }
 
   &__button {
@@ -74,6 +91,12 @@
     padding: 16px 165px;
     margin: 31px auto 0;
     transition: all ease .4s;
+    justify-content: center;
+
+    @media screen and (max-width: 600px) {
+      padding: 16px 0px;
+      width: 100%;
+    }
 
     &:hover {
       border: 1px solid #1B31A8;
@@ -90,11 +113,16 @@
       max-width: 232px;
       width: 100%;
 
+      @media screen and (max-width: 600px) {
+        max-width: 100%;
+      }
+
       &:first-child {
         margin-right: 17px;
 
         @media screen and (max-width: 600px) {
           margin-bottom: 16px;
+          margin-right: 0;
         }
       }
     }
@@ -113,6 +141,11 @@
       font-weight: 600;
       padding-left: 16px;
       max-width: 177px;
+
+      @media screen and (max-width: 600px) {
+        max-width: 100%;
+        width: 100%;
+      }
     }
 
     &__group {
@@ -186,6 +219,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      @media screen and (max-width: 600px) {
+        min-height: 64px;
+      }
     }
 
     &__text {
@@ -196,6 +233,18 @@
       line-height: 24px;
       color: #1C1E1F;
 
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+
+      &--mobile {
+        @media screen and (max-width: 600px) {
+          display: block;
+          font-size: 16px;
+          padding-left: 24px;
+          padding-right: 15px;
+        }
+      }
     }
 
     &__value {
@@ -204,6 +253,11 @@
       font-size: 40px;
       line-height: 32px;
       color: #0079FF;
+
+      @media screen and (max-width: 600px) {
+        font-size: 26px;
+        padding-right: 24px;
+      }
     }
   }
 }
