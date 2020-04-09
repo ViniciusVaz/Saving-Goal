@@ -47,10 +47,8 @@ const SavingGoal = () => {
           </label>
           <div className="form__group">
             <div
-              className={`form__icon
-                form__icon--left ${
-                errorMessage ? 'form__icon--disabled' : ''
-              }`}
+              className={`form__icon form__icon--left
+                ${errorMessage ? 'form__icon--disabled' : ''}`}
               onClick={prevMonth}
             >
               <img src={Arrow} alt="" />
@@ -74,8 +72,8 @@ const SavingGoal = () => {
         <div className="saving-goal__disclaimer">
           <p className="saving-goal__info">
             You’re planning <span>{monthDiffy} monthly deposits</span> to reach
-            your <span>${goalAmount}</span> goal
-            by <span>
+            your <span>${goalAmount}</span> goal by{' '}
+            <span>
               {monthGoal} {yearGoal}.
             </span>
           </p>

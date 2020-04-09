@@ -36,7 +36,7 @@ export default () => {
   const goalAmountChange = (el: any) => {
     const currentValue = el.target.value;
     const goalAmount = getMoneyMask(currentValue);
-    goalAmountRef.current = goalAmount
+    goalAmountRef.current = goalAmount;
 
     setGoalAmount(goalAmount);
     calcPayment(goalAmount);
@@ -82,15 +82,11 @@ export default () => {
     currentDate.setMonth(currentDate.getMonth() + 48);
     setDate(currentDate);
     calcPayment(goalAmount);
-    goalAmountRef.current = goalAmount
+    goalAmountRef.current = goalAmount;
     document.addEventListener('keydown', watchKeyPress);
 
     return () => document.removeEventListener('keydown', watchKeyPress, false);
   }, []);
-
-  useEffect(() => {
-
-  })
 
   return {
     nextMonth,
